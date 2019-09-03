@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse " id="collapsibleNavbar">
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class='nav-link' routerActiveLink='active' routerLink='product'>Product</a>
+      </li>
+      <li class="nav-item">
+        <a class='nav-link' routerActiveLink='active' routerLink='Form'>Form</a>
+      </li>
+      <li class="nav-item">
+        <a class='nav-link' routerActiveLink='active' routerLink='FiLe Uplaod'>FiLe Uplaod</a>
+      </li>
+      <li class="nav-item"><a class='nav-link' routerLink='login' routerActiveLink='active'>Login</a></li>
+      <li class="nav-item"><a class='nav-link' routerLink='register' routerActiveLink='register'>Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Page content -->
+<div class="container">
+  <div style="text-align:center">
+    <h1>
+      {{ title }} <i class="fa fa-check"></i>!
+    </h1>
+    <!-- <div class="container">
+      <div *ngFor="let car of cars" [ngClass]="{
+    'alert-primary':car.name === 'MG Hector',
+    'alert-secondary':car.name === 'Ford',
+    'alert-success':car.name === 'Kia',
+    'alert-danger':car.name === 'BMW',
+    'alert-warning':car.name === 'Jaguar',
+    'alert-info':car.name === 'Suzuki'
+  }">
+        {{ car.name }}
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<router-outlet></router-outlet>
