@@ -1,6 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "backend",
   "version": "1.0.0",
+=======
+  "name": "Backend",
+  "version": "1.0.0",
+  "description": "",
+>>>>>>> 95fe3df0be1faa84815cdbd37fb6bef7eddfc591
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +21,10 @@
     "mongojs": "^2.6.0",
     "mongoose": "^5.6.10",
     "multer": "^1.4.2"
+<<<<<<< HEAD
   },
   "description": ""
+=======
+  }
+>>>>>>> 95fe3df0be1faa84815cdbd37fb6bef7eddfc591
 }

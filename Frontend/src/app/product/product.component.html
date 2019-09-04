@@ -1,0 +1,72 @@
+<div class='container'>
+  <form>
+    <!-- <div class='form-group'>
+      <input type="file" (change)="fileChange($event)" id="btnUpload" value="Upload" class='form-control'>
+    </div> -->
+
+    <div class='form-group'>
+      <label>Product Name</label>
+      <input type='text' placeholder="product Name" name='productName' class='form-control' [(ngModel)]='_product.productName'>
+    </div>
+    <div class='form-group'>
+      <label>Product Description</label>
+      <input type='text' placeholder="Product Description" name='ProductDescription' class='form-control' [(ngModel)]='_product.productDescription'>
+    </div>
+
+    <div class='form-group'>
+      <label>Product Code</label>
+      <input type='text' placeholder="Product Code" name='ProductCode' class='form-control' [(ngModel)]='_product.productCode'>
+    </div>
+
+    <div class='form-group'>
+      <label>Product Created</label>
+      <input type='text' placeholder="Product Created" name='productCreated' class='form-control' [(ngModel)]='_product.productCreated'>
+    </div>
+
+    <div class='form-group'>
+      <label>Product Price</label>
+      <input type='text' placeholder="Product Price" name='ProductPrice' class='form-control' [(ngModel)]='_product.ProductPrice'>
+    </div>
+
+    <div class='text-center'>
+      <button class='btn btn-primary' (click)='saveProduct()'>Save</button> |
+      <button class='btn btn-primary' (click)='updateData()'>update</button>
+    </div>
+  </form>
+  <br /><br />
+
+  <div>
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a Product">
+    </div>
+
+
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Description</th>
+          <th>Product Code</th>
+          <th>Product Created</th>
+          <th>Product price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productsArray | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }">
+          <td>{{item.productName}}</td>
+          <td>{{item.productDescription}}</td>
+          <td>{{item.productCode}}</td>
+          <td>{{item.productCreated | date}}</td>
+          <td>{{item.ProductPrice}}</td>
+          <td>
+            <button (click)="
+          editProduct(item)" class='btn btn-success'> Edit</button> &nbsp;
+            <button (click)="deleteProduct(item._id)" class='btn btn-primary'>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
